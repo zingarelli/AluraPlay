@@ -19,12 +19,18 @@ async function postVideo(title, description, url, image) {
                 imagem: image
             })
         });
-
     const response = await connection.json();
     return response;
 }
 
+async function searchVideosByKeyword(keyword) {
+    const connection = await fetch(`http://localhost:3000/videos?q=${keyword}`);
+    const data = await connection.json();
+    return data;
+}
+
 export const apiConnection = {
     getVideos, 
-    postVideo
+    postVideo,
+    searchVideosByKeyword
 }

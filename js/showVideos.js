@@ -19,9 +19,19 @@ function createVideoCard(title, description, url, image) {
     return videoItem;    
 }
 
-async function createPlaylist() {
-    const videoList = await apiConnection.getVideos();
-    videoList.forEach(video => playlist.appendChild(createVideoCard(video.titulo, video.descricao, video.url, video.imagem)));
+export default function createPlaylist(videos) {    
+    if(videos){
+        playlist.replaceChildren();
+        videos.forEach(video => playlist.appendChild(createVideoCard(video.titulo, video.descricao, video.url, video.imagem)));
+    }
 }
 
-createPlaylist();
+// get videos from the API when the page loads
+(() => {
+    apiConnection.getVideos()
+        .then((data => createPlaylist(data)))
+        .catch(err => {
+            playlist.innerHTML = `<h2 class="mensagem__titulo">Error. The playlist could not be loaded.</h2>`;
+            console.log(err);
+        });
+})();
