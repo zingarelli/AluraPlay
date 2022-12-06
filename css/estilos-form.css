@@ -25,6 +25,10 @@
     font-size: 21px;
 }
 
+.formulario__erro {
+    color: var(--vermelho);
+}
+
 .campo__escrita {
     width: 50vw;
     border-radius: 24px;

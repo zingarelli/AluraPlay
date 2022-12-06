@@ -1,7 +1,10 @@
 async function getVideos() {
     const connection = await fetch('http://localhost:3000/videos');
-    const data = await connection.json();
-    return data;
+    if(connection.ok) {
+        const data = await connection.json();
+        return data;
+    }
+    else throw new Error(`Error connecting to the API. Response status: ${connection.status} - ${connection.statusText}`);
 }
 
 async function postVideo(title, description, url, image) {
@@ -18,15 +21,22 @@ async function postVideo(title, description, url, image) {
                 url: url,
                 imagem: image
             })
-        });
+        }
+    );
+    if (!connection.ok) {
+        throw new Error (`Error connecting to the API. Response status: ${connection.status} - ${connection.statusText}`)
+    }
     const response = await connection.json();
     return response;
 }
 
 async function searchVideosByKeyword(keyword) {
     const connection = await fetch(`http://localhost:3000/videos?q=${keyword}`);
-    const data = await connection.json();
-    return data;
+    if(connection.ok) {
+        const data = await connection.json();
+        return data;
+    }
+    else throw new Error(`Error connecting to the API. Response status: ${connection.status} - ${connection.statusText}`);
 }
 
 export const apiConnection = {

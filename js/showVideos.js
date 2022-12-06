@@ -20,7 +20,8 @@ function createVideoCard(title, description, url, image) {
 }
 
 export default function createPlaylist(videos) {    
-    if(videos){
+    // check if object is not empty
+    if(Object.keys(videos).length !== 0){
         playlist.replaceChildren();
         videos.forEach(video => playlist.appendChild(createVideoCard(video.titulo, video.descricao, video.url, video.imagem)));
     }
@@ -31,7 +32,7 @@ export default function createPlaylist(videos) {
     apiConnection.getVideos()
         .then((data => createPlaylist(data)))
         .catch(err => {
-            playlist.innerHTML = `<h2 class="mensagem__titulo">Error. The playlist could not be loaded.</h2>`;
+            playlist.innerHTML = `<h2 class="mensagem__titulo">Sorry. The playlist could not be loaded.<br /><br />Please, contact the Support Team.</h2>`;
             console.log(err);
         });
 })();
