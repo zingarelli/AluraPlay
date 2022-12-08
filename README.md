@@ -11,21 +11,19 @@ Create a playlist with your favorite YouTube videos.
 
 ![](https://user-images.githubusercontent.com/19349339/205926943-f418ad3d-4985-4fc5-a430-ea86a9ee3c82.png#vitrinedev)
 
-## Credits
-
-This project was developed in a JavaScript course from [Alura](https://www.alura.com.br), called "JavaScript: criando requisições" (JavaScript: making requests).
-
-Instructor: 
-- **[Mônica Mazzochi Hillman](https://github.com/MonicaHillman)**
-
-
-
 ## Project Details
 In this project, you can view a list of videos (a playlist), search for specific videos and also add new videos to the playlist. 
 
 The focus in the project was to code JavaScript in order to dynamically add videos from a database, perform search by keyword, add new videos to the same database and also deal with errors that might happen in the connection with the API. 
 
 JSON Server is used to mock a database and API requests and responses. You need to install it in order to successfully run the project. [Check the instalation details](#install-and-run-json-server).
+
+## Credits
+
+This project was developed in a JavaScript course from [Alura](https://www.alura.com.br), called "JavaScript: criando requisições" (JavaScript: making requests).
+
+Instructor: 
+- **[Mônica Mazzochi Hillman](https://github.com/MonicaHillman)**
 
 ## Stack
 * HTML and CSS: files were already provided. I only updated them to translate texts to English and add custom error messages
