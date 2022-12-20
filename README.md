@@ -72,7 +72,7 @@ Instrutora:
 
 ## Detalhes do projeto
 
-Neste projeto, vocè pode visualizar uma lista de vídeos (uma playlist), procurar por um vídeo em específico, e também adicionar novos vídeos à playlist.
+Neste projeto, você pode visualizar uma lista de vídeos (uma playlist), procurar por um vídeo em específico, e também adicionar novos vídeos à playlist.
 
 O foco do projeto é desenvolver o código em JavaScript para mostrar dinamicamente os vídeos na tela (obtidos de um banco de dados), além de fazer a busca por palavra-chave, adicionar novos vídeos (e salvá-los no banco) e tratar erros que possam acontecer na conexão com a API que "conversa" com o banco de dados.
 
